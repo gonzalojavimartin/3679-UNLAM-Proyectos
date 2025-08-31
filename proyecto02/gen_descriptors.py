@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import csv
 
 # Índices de las webcams (ajusta según tu sistema)
 WEBCAM_USB = 1
@@ -78,6 +79,9 @@ def main():
                 print("Invariantes de Hu:")
                 for i, hval in enumerate(hu, start=1):
                     print(f"  Hu[{i}]: {hval}")
+                with open("descriptors.csv", "a", newline="") as f:
+                    writer = csv.writer(f)
+                    writer.writerow([float(h) for h in hu] + [label])
                 print("---")
 
     cap.release()
