@@ -49,7 +49,7 @@ def main():
     ref_contours = load_reference_contours("refs")
 
     # Defino el idex de la camara a utilizar
-    webcam = cv2.VideoCapture(WEBCAM_MACBOOK)
+    webcam = cv2.VideoCapture(WEBCAM_USB)
 
     # Ventana única donde mostraremos Binaria + Resultado
     winform_name = "Deteccion de Formas"
